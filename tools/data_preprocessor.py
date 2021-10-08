@@ -14,11 +14,13 @@ def is_exist_X(test_data):
     return True
 
 # 단일 데이터
-SINGLE_DIR = r'/home/sun/Desktop/CRC_HandGesture_Recongition/raw_data/**/**/단일/*.xlsx'
+# SINGLE_DIR = r'/home/sun/Desktop/CRC/Single_Motion/**/**/단일/*.xlsx'
+MULTI_DIR = r'/home/sun/Desktop/CRC/Multi_Motion/**/**/연속/*.xlsx'
 # Number of Sheet
-NUMOFSHEET = 12
+NUMOFSHEET = 16
 
-xlsx_list = glob.glob(SINGLE_DIR)
+# xlsx_list = glob.glob(SINGLE_DIR)
+xlsx_list = glob.glob(MULTI_DIR)
 
 for xlsx_idx, xlsx_file in enumerate(xlsx_list):
 
@@ -36,6 +38,7 @@ for xlsx_idx, xlsx_file in enumerate(xlsx_list):
 
         # DataFrame to numpy array
         numpy_data = data.to_numpy()
+
         print("numpy_data.shape : {}".format(numpy_data.shape))
 
         valid_data = []
@@ -49,7 +52,10 @@ for xlsx_idx, xlsx_file in enumerate(xlsx_list):
                 valid_data.append(list(numpy_data[data_idx]))
 
         valid_data = np.array(valid_data)
+
         print("valid_data.shape : {}".format(valid_data.shape))
+
+        print(valid_data)
 
         #print(is_exist_X(valid_data))
 
