@@ -82,9 +82,9 @@ for xlsx_idx, xlsx_file in enumerate(xlsx_list):
                     elif non_zero_start_flag and zero_start_flag and numpy_data[tmp_idx][-1] == 0:
                         instance.append(numpy_data[tmp_idx].tolist())
                         break
-            if len(instance) > 8:
-                if len(instance) > 30:
-                    print(instance)
+            if len(instance) > 6:
+                # if len(instance) > 30:
+                #     print(instance)
                 f.write("{0:04}".format(global_cnt) + " {}\n".format(class_label))
                 #np.save('/home/sun/Desktop/CRC/data/npy/{0:04}'.format(global_cnt), np.array(instance))
                 global_cnt += 1

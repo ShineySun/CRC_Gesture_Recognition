@@ -32,9 +32,13 @@ class GestureData(Dataset):
 
         gesture_data = (gesture_data - self.x_min) / (self.x_max - self.x_min)
 
+        gesture_data = gesture_data*2.0 - 1
+
         # padding
-        if len(gesture_data) <= 50:
-            gesture_data = np.append(gesture_data, np.zeros((50-len(gesture_data), 5)), axis=0)
+        if len(gesture_data) <= 30:
+            gesture_data = np.append(gesture_data, np.zeros((30-len(gesture_data), 5)), axis=0)
+        else:
+            gesture_data = gesture_data[:30]
 
         gesture_data = np.array([gesture_data], np.float)
 

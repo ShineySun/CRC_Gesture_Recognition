@@ -18,10 +18,10 @@ test_class_cnt = [0 for _ in range(16)]
 
 # READ ANNOTATION FILE LINES
 datas = annotation_file.readlines()
-random.shuffle(datas)
+# random.shuffle(datas)
 
-train_datas = datas[:int(len(datas)*0.9)]
-test_datas = datas[int(len(datas)*0.9):]
+train_datas = datas[:int(len(datas)*0.85)]
+test_datas = datas[int(len(datas)*0.85):]
 # DATA EXTENSION
 ext = '.npy'
 
